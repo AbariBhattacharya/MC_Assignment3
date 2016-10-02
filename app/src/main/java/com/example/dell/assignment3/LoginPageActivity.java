@@ -53,6 +53,7 @@ public class LoginPageActivity extends AppCompatActivity {
                 intent.putExtra("Uname",name);
                 intent.putExtra("Pword",pwd);
                 startActivityForResult(intent,REQUEST_CODE_DETAILPAGE);
+                finish();
             }
         });
     }

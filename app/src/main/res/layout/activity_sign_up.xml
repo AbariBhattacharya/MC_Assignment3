@@ -145,9 +145,17 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Logout"
-        android:id="@+id/logoutbutton"
+        android:text="Back"
+        android:id="@+id/backButton"
         android:layout_alignTop="@+id/savetodb"
         android:layout_alignRight="@+id/passwordeditText4"
         android:layout_alignEnd="@+id/passwordeditText4" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View User Details"
+        android:id="@+id/viewDetailButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

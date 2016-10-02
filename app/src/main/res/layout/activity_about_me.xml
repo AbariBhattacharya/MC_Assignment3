@@ -20,21 +20,12 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/editText"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save In Internal Storage"
-        android:id="@+id/button"
-        android:layout_above="@+id/button2"
+        android:id="@+id/intButton"
+        android:layout_above="@+id/extbutton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -42,9 +33,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save In External Storage"
-        android:id="@+id/button2"
+        android:id="@+id/extbutton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="81dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/aboutMeEditText"
+        android:inputType="text"
+        android:ems="10"
+        android:background="#f1f8f5"
+        android:outlineProvider="paddedBounds"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

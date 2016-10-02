@@ -1,5 +1,7 @@
 package com.example.dell.assignment3;
 
+import android.database.Cursor;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +21,7 @@ public class SignUpActivity extends AppCompatActivity {
     EditText meditPassword;
     EditText meditPhone;
     Button mSaveButton;
+    private Button mViewDetails;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +37,38 @@ public class SignUpActivity extends AppCompatActivity {
 
         mSaveButton=(Button)findViewById(R.id.savetodb);
        saveData();
+        mViewDetails=(Button)findViewById(R.id.viewDetailButton);
+        mViewDetails.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Cursor res=testDb.getData(meditUname.getText().toString());
+
+
+
+                StringBuffer buffer=new StringBuffer();
+                while(res.moveToNext()){
+                    buffer.append("firstName :" +res.getString(0));
+                    buffer.append("lastName :" +res.getString(1));
+                    buffer.append("userName :" +res.getString(2));
+                    buffer.append("password :" +res.getString(3));
+                    buffer.append("phoneNo :" +res.getString(4));
+                }
+                showMessage("Details",buffer.toString());
+
+            }
+
+        });
+
+    }
+
+    public void showMessage(String title,String message){
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.show();
+
+
     }
 
    public void saveData(){
